@@ -6,7 +6,7 @@
 }
 
 .header__inner {
-  width: 102.2rem;
+  width: 102rem;
   margin: 0 auto;
 }
 
@@ -17,6 +17,7 @@
   background-color: var(--color-blue-600);
   color: white;
   border: none;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,7 +37,118 @@
 /* ---------------------------------------------- */
 /* 내비게이션                                        */
 /* ---------------------------------------------- */
+.navigation {
+  display: none;
+  width: 102rem;
+  height: 50.6rem;
+  margin: 0 auto;
+}
 
+.navigation.is--active {
+  display: block;
+}
+
+.navigation__inner {
+  width: 54rem;
+  height: 50rem;
+}
+
+.navigation__list {
+  list-style: none;
+  margin: 0;
+  padding: 1rem .5rem;
+
+  width: 18rem;
+  height: 50rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  
+  position: relative;
+}
+
+.navigation__list .navigation__list {
+  position: absolute;
+  top: 0;
+  right: -100%;
+
+  display: none;
+}
+
+.navigation__list::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 3px 2.5px .3px var(--color-opacity-20);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.navigation__list .navigation__list::after {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 100%;
+  background-color: var(--color-white);
+  position: absolute;
+  top: 0;
+  left: -2px;
+  z-index: 10;
+}
+
+.navigation__list .navigation__list.is--active {
+  display: block;
+}
+
+.navigation__list-item {
+  width: 17rem;
+  height: 3rem;
+}
+
+.navigation__list-item a {
+  display: flex;
+  align-items: center;
+
+  height: 100%;
+  padding-left: 2rem;
+  
+  position: relative;
+
+  cursor: pointer;
+}
+
+.navigation__list-item a.is--active,
+.navigation__list-item a:focus,
+.navigation__list-item a:hover {
+  color: var(--color-blue-600);
+}
+
+.navigation__list-item a.is--active::after,
+.navigation__list-item a:active::after {
+  content: '';
+  display: block;
+  width: .7rem; 
+  height: 1rem;
+  
+  position: absolute;
+  top: 50%;
+  right: 1.25rem;
+  transform: translateY(-50%);
+
+  background-image: url("/assets/icon/more-right-active.svg");
+  background-size: cover;
+  background-position: center;
+}
+
+.navigation__list-item a i {
+  font-size: 2rem;
+  margin-right: .4rem;
+}
+
+.navigation__list-item a p {
+  margin: 0;
+}
 
 /* ---------------------------------------------- */
 /* 메인 콘텐츠                                       */
@@ -50,3 +162,7 @@
 /* ---------------------------------------------- */
 /* 푸터                                            */
 /* ---------------------------------------------- */
+.footer {
+  width: 100%;
+  height: 34.9rem;
+}
