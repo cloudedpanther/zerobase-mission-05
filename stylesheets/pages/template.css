@@ -141,6 +141,11 @@
   background-position: center;
 }
 
+.navigation__list-item .navigation__list-item
+.navigation__list-item a:active::after {
+  display: none;
+}
+
 .navigation__list-item a i {
   font-size: 2rem;
   margin-right: .4rem;
