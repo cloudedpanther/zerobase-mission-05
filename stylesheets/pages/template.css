@@ -39,9 +39,15 @@
 /* ---------------------------------------------- */
 .navigation {
   display: none;
+
   width: 102rem;
-  height: 50.6rem;
-  margin: 0 auto;
+  height: 52rem;
+  
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  z-index: 10;
 }
 
 .navigation.is--active {
@@ -49,8 +55,7 @@
 }
 
 .navigation__inner {
-  width: 54rem;
-  height: 50rem;
+  width: 18rem;
 }
 
 .navigation__list {
@@ -94,7 +99,6 @@
   position: absolute;
   top: 0;
   left: -2px;
-  z-index: 10;
 }
 
 .navigation__list .navigation__list.is--active {
@@ -120,7 +124,10 @@
 
 .navigation__list-item a.is--active,
 .navigation__list-item a:focus,
-.navigation__list-item a:hover {
+.navigation__list-item a:hover,
+.navigation__list-item a.is--active i,
+.navigation__list-item a:focus i,
+.navigation__list-item a:hover i {
   color: var(--color-blue-600);
 }
 
@@ -149,12 +156,16 @@
 .navigation__list-item a i {
   font-size: 2rem;
   margin-right: .4rem;
+  color: var(--color-gray-900);
 }
 
 .navigation__list-item a p {
   margin: 0;
 }
 
+.navigation__list-item a img {
+  margin-left: .4rem;
+}
 /* ---------------------------------------------- */
 /* 메인 콘텐츠                                       */
 /* ---------------------------------------------- */
@@ -169,5 +180,128 @@
 /* ---------------------------------------------- */
 .footer {
   width: 100%;
-  height: 34.9rem;
+  margin-top: 3.8rem;
+  color: var(--color-gray-800);
+}
+
+.customer-guide {
+  height: 4rem;
+  font-size: 1.2rem;
+  background-color: var(--color-gray-200);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.customer-guide span {
+  margin: 0 1.4rem;
+}
+
+.fw--bold {
+  font-weight: bold;
+}
+
+.footer__information {
+  width: 100%;
+  padding: 3.2rem 0;
+
+  display: flex;
+  justify-content: center;
+}
+
+.footer__information article + article {
+  margin-left: 6.2rem;
+}
+
+.footer__information p {
+  margin: 0;
+}
+
+.footer__logo {
+  width: 17.6rem;
+  height: 4rem;
+  background-image: url("/assets/logo/logo-mono.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.footer__coupang-information p + p {
+  margin-top: 1.2rem;
+}
+
+.customer-center__title,
+.customer-center__title p:first-child {
+  display: flex;
+  align-items: center;
+}
+
+.customer-center__title p:first-child::after {
+  content: '';
+  display: block;
+  width: .2rem;
+  height: 1.2rem;
+  border-left: 1px solid var(--color-black);
+  margin: 0 1.3rem;
+}
+
+.customer-center__number {
+  font-size: 4.8rem;
+  padding-bottom: .4rem;
+}
+
+.footer__customer-center > a {
+  display: block;
+}
+
+.footer__customer-center > p,
+.footer__customer-center > a {
+  margin-top: .8rem;
+}
+
+.footer__payment-guarantee {
+  width: 28.2rem;
+}
+
+.footer__payment-guarantee p + p {
+  margin-top: .8rem;
+}
+
+.footer__copyrightSNS {
+  width: 100%;
+  background-color: var(--color-gray-900);
+  color: var(--color-gray-200);
+  font-size: 1.2rem;
+  font-weight: lighter;
+  padding: 3.2rem 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__copyright p {
+  margin: 0;
+}
+
+.footer__SNS {
+  margin-left: 5rem;
+  display: flex;
+  align-self: flex-end;
+}
+
+.SNS-icon {
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 50%;
+}
+
+.SNS-icon + .SNS-icon {
+  margin-left: 1rem;
+}
+
+.background--instagram {
+  background: linear-gradient(174.12deg, #285AEB 5.61%, #BC1888 22.32%, #CC2366 36.16%, #DC2743 51.91%, #E6683C 73.38%, #F09433 91.99%) center no-repeat;
+  background-size: cover;
 }
